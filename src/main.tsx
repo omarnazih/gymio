@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "./lib/providers/theme-provider";
+import { ThemeProvider } from "@/lib/providers/theme-provider";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
-import HomePage from "./pages/home";
-import { ErrorPage } from "./error-page";
-import ChildPage from "./pages/child";
+import HomePage from "@/pages/home";
+import { ErrorPage } from "@/error-page";
+import FaqPage from "@/pages/faq";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/child/:id",
-    element: <ChildPage />,
+    path: "/faq",
+    element: <FaqPage />,
     errorElement: <ErrorPage />,
   },
 ]);
