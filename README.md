@@ -1,3 +1,7 @@
 # Todo
 
-[] Init auth with supabase
+### Auth
+
+- [✅] Init auth with supabase.
+- [❌] Add auth using email and password.
+- [❌] User Can show and edit his own profile data.
