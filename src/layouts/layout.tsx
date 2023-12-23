@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sooner";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Sidebar from "@/components/sidebar";
+import { LucideHome, LucideUser } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,10 +15,12 @@ const sidebarNavItems = [
   {
     title: "home",
     href: "/",
+    icon: <LucideHome />,
   },
   {
     title: "Account",
     href: "/account",
+    icon: <LucideUser />,
   },
 ];
 
