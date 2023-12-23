@@ -5,7 +5,7 @@ interface RouteError {
   message?: string;
 }
 
-export function ErrorPage() {
+export default function ErrorPage() {
   const { error } = useRouteError() as { error: RouteError };
 
   return (
