@@ -32,8 +32,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </aside>
           <div className="flex-1 lg:max-w-2xl">{children}</div>
         </div>
-        <Footer />
       </div>
+      <Footer />
       <Toaster />
     </React.Fragment>
   );
