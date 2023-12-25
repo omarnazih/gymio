@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
 // import { Label } from "@/components/ui/label";
-import { AtSign, LucideLoader } from "lucide-react";
+import { AtSign } from "lucide-react";
 
 import { supabaseClient } from "@/lib/supabase/api";
 // import { toast } from "sonner";
@@ -16,7 +16,7 @@ import { supabaseClient } from "@/lib/supabase/api";
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  // const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const handelLoginGoogle = async () => {
     await supabaseClient.auth.signInWithOAuth({
@@ -84,13 +84,13 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         variant="outline"
         type="button"
         onClick={handelLoginGoogle}
-        disabled={isLoading}
+        // disabled={isLoading}
       >
-        {isLoading ? (
+        {/* {isLoading ? (
           <LucideLoader className="mr-2 h-4 w-4 animate-spin" />
-        ) : (
-          <AtSign className="mr-2 h-4 w-4" />
-        )}{" "}
+        ) : ( */}
+        <AtSign className="mr-2 h-4 w-4" />
+        {/* )}{" "} */}
         Gmail
       </Button>
     </div>
