@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn, getURL } from "@/lib/utils";
 // import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
@@ -21,6 +21,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const handelLoginGoogle = async () => {
     await supabaseClient.auth.signInWithOAuth({
       provider: "google",
+      options: {
+        redirectTo: getURL(),
+      },
     });
   };
   //   async function onSubmit(event: React.SyntheticEvent) {
