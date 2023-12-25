@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase/api";
+import { supabaseClient } from "@/lib/supabase/api";
 import { Session } from "@supabase/supabase-js";
 // import { Link } from "react-router-dom";
 
@@ -11,13 +11,13 @@ const LoginPage = () => {
   useEffect(() => {
     // supabase.auth.signOut();
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabaseClient.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
     });
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = supabaseClient.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
 
@@ -25,7 +25,7 @@ const LoginPage = () => {
   }, []);
 
   if (session) {
-    supabase.auth.signOut();
+    supabaseClient.auth.signOut();
   }
   return (
     <div className="max-w-md mx-auto h-full mt-[25vh] ">

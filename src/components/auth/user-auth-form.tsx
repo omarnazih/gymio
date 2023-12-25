@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 // import { Label } from "@/components/ui/label";
 import { AtSign, LucideLoader } from "lucide-react";
 
-import { supabase } from "@/lib/supabase/api";
+import { supabaseClient } from "@/lib/supabase/api";
 // import { toast } from "sonner";
 // import { redirect } from "react-router-dom";
 
@@ -19,7 +19,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const handelLoginGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
+    await supabaseClient.auth.signInWithOAuth({
       provider: "google",
     });
   };

@@ -9,7 +9,7 @@ export default function ErrorPage() {
   const { error } = useRouteError() as { error: RouteError };
 
   return (
-    <div className="flex flex-col items-center justify-center flex-1">
+    <div className="flex flex-col items-center justify-center flex-1 h-screen">
       <h1 className="text-6xl font-bold text-muted-foreground">
         {error?.status || "404"}
       </h1>

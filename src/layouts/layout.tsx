@@ -13,7 +13,7 @@ interface LayoutProps {
 
 const sidebarNavItems = [
   {
-    title: "home",
+    title: "Home",
     href: "/",
     icon: <LucideHome />,
   },
